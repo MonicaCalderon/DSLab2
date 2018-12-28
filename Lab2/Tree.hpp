@@ -7,7 +7,7 @@ class Tree
 {
 public:
     Tree();
-    void insertNode(Tree tree);
+    void insertNode(TreeNode *&tree, int n);
 };
 
 #endif // TREE_HPP

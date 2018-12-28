@@ -14,6 +14,7 @@ int main()
     file.createSerie(str);
     
     Tree newTree;
+
     
     
 	return 0;
