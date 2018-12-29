@@ -7,7 +7,16 @@ class Tree
 {
 public:
     Tree();
-    void insertNode(TreeNode *&tree, int n);
+    struct Node *createNode(int n);
+    void insertNode(struct Node *&tree, int n);
+    void showTree(struct Node *tree, int counter);
+    bool searchInTree(struct Node *tree, int n);
+    void preOrder(struct Node *tree);
+
+private:
+    struct Node;
 };
+
+
 
 #endif // TREE_HPP

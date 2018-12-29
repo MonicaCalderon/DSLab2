@@ -1,1 +1,1 @@
-./Debug/main.cpp.o ./Debug/TreeNode.cpp.o ./Debug/Tree.cpp.o ./Debug/TextFile.cpp.o   
+./Debug/main.cpp.o ./Debug/Tree.cpp.o ./Debug/TextFile.cpp.o   

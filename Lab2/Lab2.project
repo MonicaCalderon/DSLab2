@@ -95,8 +95,8 @@
   <VirtualDirectory Name="src">
     <File Name="Tree.cpp"/>
     <File Name="Tree.hpp"/>
-    <File Name="TreeNode.cpp"/>
-    <File Name="TreeNode.hpp"/>
+    <File Name="TreeNode.cpp" ExcludeProjConfig="Debug;"/>
+    <File Name="TreeNode.hpp" ExcludeProjConfig="Debug;"/>
     <File Name="TextFile.hpp"/>
     <File Name="TextFile.cpp"/>
     <File Name="main.cpp"/>
