@@ -5,17 +5,19 @@
 #include "TextFile.hpp"
 #include "Tree.hpp"
 #include "TreeNode.hpp"
+#include "ListNode.hpp"
+#include "List.hpp"
 
 using namespace std;
 
-int main(int argc, char * argv[])
-{
+int main(int argc, char * argv[]) {
+	
+	int arrSize = 0;
+	int arr[10000];
+	
 	ifstream myfile("input.txt");
 	if (myfile.is_open())
 	{
-		int arrSize = 0;
-		int arr[10000]; // Ideally this would be a vector, but you said array
- 
 		while ( true)
 		{
 			int x;
@@ -24,15 +26,29 @@ int main(int argc, char * argv[])
 				break;
 			arr[arrSize++] = x;
 		}
-		for (int i = 0; i < arrSize; ++i)
-			cout << arr[i] << " ";
-		cout << endl;
     // I should have closed the file here, but as the program was ending I was lazy	
 	}
 	else
 	{
 		cout << "Unable to open file";
 	}
+	
+	int start = arr[0];
+	int end = arr[1];
+	int step = arr[2];
+	
+	cout << start << endl;
+	cout << end << endl;
+	cout << step << endl;
+	
+	List serie1;
+	serie1.insert(serie1,start);
+	serie1.insert(serie1.getList(),end);
+	serie1.insert(serie1.getList(),step);
+	serie1.showList(serie1.getList());
+	
+	
+	
 	return 0;
 	
 	/*

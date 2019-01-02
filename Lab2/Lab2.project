@@ -93,6 +93,10 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="ListNode.cpp"/>
+    <File Name="ListNode.hpp"/>
+    <File Name="List.cpp"/>
+    <File Name="List.hpp"/>
     <File Name="Tree.cpp"/>
     <File Name="Tree.hpp"/>
     <File Name="TreeNode.cpp" ExcludeProjConfig="Debug;"/>
