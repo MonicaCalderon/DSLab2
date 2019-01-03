@@ -10,7 +10,7 @@
 
 using namespace std;
 
-int main(int argc, char * argv[]) {
+int main() {
 	
 	int arrSize = 0;
 	int arr[10000];
@@ -18,9 +18,9 @@ int main(int argc, char * argv[]) {
 	ifstream myfile("input.txt");
 	if (myfile.is_open())
 	{
+        int x;
 		while ( true)
 		{
-			int x;
 			myfile >> x;
             cout<<x<<endl; //Imprime los números que hay en el txt
 			if (myfile.eof()) //If end of file
@@ -43,9 +43,10 @@ int main(int argc, char * argv[]) {
 	cout << end << endl;
 	cout << step << endl;
     
-    //No se xq pero sale un 0 cuando tendría que salir un 2 (si pones un cuarto numero en el txt si que se guarda el 2)
-	
-        List serie(start, end, step);
+    List serie(start, end, step);
+    
+    TextFile file;
+    
 	/*  
     
     TextFile file;

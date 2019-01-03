@@ -9,9 +9,9 @@ class TextFile
 {
 public:
     TextFile();
-    void write();
+    void write(int start, int end, int step);
     string read();
-    void createSerie(string str);
+    void readSerie();
 };
 
 #endif // TEXTFILE_HPP
