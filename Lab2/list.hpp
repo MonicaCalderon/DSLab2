@@ -9,19 +9,24 @@ class List
 {
 public:
     List();
-    ~List();
-    List(int size);
+    List(int start, int step, int end);
     void insert(ListNode *&list, int n);
     void showList(ListNode *list);
     bool searchInList(int e);
     void remove(int r);
     ListNode* getList();
-    int getSize();
-    void setSize(int s);
+    int getStart();
+    int getEnd();
+    int getStep();
+    void setStart(int sta);
+    void setEnd(int e);
+    void setStep(int ste);
 private:
     ListNode node;
     ListNode *list = NULL;
-    int size;
+    int start;
+    int end;
+    int step;
 };
 
 #endif // LIST_HPP

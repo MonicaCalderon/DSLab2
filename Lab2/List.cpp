@@ -1,7 +1,7 @@
 #include "List.hpp"
 #include "ListNode.hpp"
 #include <iostream> //includes NULL
-#include <curses.h> //includes cout
+#include <conio.h> //includes cout
 #include <stdlib.h>//Includes rand
 
 using namespace std;
@@ -11,26 +11,15 @@ List::List()
 
 }
 
-List::List(int size)
+List::List(int start, int end, int step)
 {
-    for (int i=1;i<=size;i++)
+    for (int i=start;i<=end;i = i + step)
     {
         insert(list,i);
     }
+    showList(list);
 }
 
-List::~List()
-{
-}
-    
-int List::getSize() {
-	return this->size;
-}
-
-void List::setSize(int s){
-        size= s;
-    }
-    
 ListNode* List::getList(){
     return this->list;
     }
@@ -125,3 +114,27 @@ void List::remove(int r)
         }
     }
 }
+
+int List::getStart() {
+	return this->start;
+}
+
+void List::setStart(int sta){
+        start= sta;
+}
+
+int List::getEnd() {
+	return this->end;
+}
+
+void List::setEnd(int e){
+        end= e;
+}
+
+int List::getStep () {
+	return this->step;
+}
+
+void List::setStep(int ste){
+        step= ste;
+    }

@@ -5,7 +5,7 @@ class ListNode
 {
 public:
     ListNode();
-    ~ListNode();
+
     int getData();
     ListNode* getNext();
     

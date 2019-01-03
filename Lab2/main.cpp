@@ -22,8 +22,9 @@ int main(int argc, char * argv[]) {
 		{
 			int x;
 			myfile >> x;
-			if (myfile.eof())
-				break;
+            cout<<x<<endl; //Imprime los números que hay en el txt
+			if (myfile.eof()) //If end of file
+            break;
 			arr[arrSize++] = x;
 		}
     // I should have closed the file here, but as the program was ending I was lazy	
@@ -32,6 +33,7 @@ int main(int argc, char * argv[]) {
 	{
 		cout << "Unable to open file";
 	}
+    myfile.close();
 	
 	int start = arr[0];
 	int end = arr[1];
@@ -40,18 +42,11 @@ int main(int argc, char * argv[]) {
 	cout << start << endl;
 	cout << end << endl;
 	cout << step << endl;
+    
+    //No se xq pero sale un 0 cuando tendría que salir un 2 (si pones un cuarto numero en el txt si que se guarda el 2)
 	
-	List serie1;
-	serie1.insert(serie1,start);
-	serie1.insert(serie1.getList(),end);
-	serie1.insert(serie1.getList(),step);
-	serie1.showList(serie1.getList());
-	
-	
-	
-	return 0;
-	
-	/*
+        List serie(start, end, step);
+	/*  
     
     TextFile file;
     file.write();
