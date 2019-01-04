@@ -15,7 +15,7 @@ private:
     int data;
     TreeNode *right;
     TreeNode *left;
-    
+
     friend class Tree;
 };
 

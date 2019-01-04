@@ -3,15 +3,25 @@
 #include <fstream>
 
 #include "TextFile.hpp"
-#include "Tree.hpp"
-#include "TreeNode.hpp"
+//#include "Tree.hpp"
+//#include "TreeNode.hpp"
 #include "ListNode.hpp"
 #include "List.hpp"
+#include "BST.cpp"
 
 using namespace std;
 
 int main() {
 	
+	BST t;
+    t.insert(20);
+    t.insert(25);
+    t.insert(15);
+    t.insert(10);
+    t.insert(30);
+    t.display();
+	
+	/*
 	int arrSize = 0;
 	int arr[10000];
 	

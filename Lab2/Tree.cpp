@@ -1,5 +1,5 @@
 #include "Tree.hpp"
-//#include "TreeNode.hpp"
+#include "TreeNode.hpp"
 
 #include<cstddef> //Includes NULL
 #include<stdio.h>
