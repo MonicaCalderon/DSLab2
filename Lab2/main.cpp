@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 
+#include "Colormod.hpp"
 #include "TextFile.hpp"
 //#include "Tree.hpp"
 //#include "TreeNode.hpp"
@@ -17,14 +18,46 @@ void showContent() {
 
 int main() {
 	
+	// Para poder imprimir en colores
+	Color::Modifier red(Color::FG_RED);
+	Color::Modifier green(Color::FG_GREEN);
+    Color::Modifier def(Color::FG_DEFAULT);
+	
 	// Prueba del funcionamiento del BST
+	/*
 	BST t;
     t.insert(20);
     t.insert(25);
     t.insert(15);
     t.insert(10);
     t.insert(30);
-    t.display();
+    t.display();*/
+	
+	int arrSize = 0;
+	int arr[10000];
+	
+	ifstream myfile("input.txt");
+	if (myfile.is_open())
+	{
+        int x;
+		while ( true)
+		{
+			myfile >> x;
+			if (myfile.eof()) //If end of file
+            break;
+			arr[arrSize++] = x;
+		}
+    // I should have closed the file here, but as the program was ending I was lazy	
+	}
+	else
+	{
+		cout << "Unable to open file";
+	}
+    myfile.close();
+	
+	int start = arr[0];
+	int end = arr[1];
+	int step = arr[2];
 	
 	int choice;
 	bool showMenu = true;
@@ -48,12 +81,13 @@ int main() {
 	cin >> choice;
 	cout << "\n";
 
-	switch (choice)
-	{
-	case 1:
-	cout << "game start!\n";
-	// rest of code here
-	break;
+	switch (choice) {
+	
+		case 1:
+			cout << green << "> The series inside the text file are:\n";
+			cout << start << " " << end << " " << step << endl;
+			cout << "> End of the task. Redirect to menu.\n" << def;
+		break;
 	case 2:
 	cout << "Story so far....\n";
 	// rest of code here
@@ -82,7 +116,7 @@ int main() {
 	// rest of code here
 	break;
 	case 9:
-	cout << "> Goodbye!";
+	cout << "> Goodbye!\n";
 	showMenu = false;
 	break;
 	default:
@@ -92,41 +126,8 @@ int main() {
 	}
 
 	}
-	/*
-	int arrSize = 0;
-	int arr[10000];
+
 	
-	ifstream myfile("input.txt");
-	if (myfile.is_open())
-	{
-        int x;
-		while ( true)
-		{
-			myfile >> x;
-            cout<<x<<endl; //Imprime los números que hay en el txt
-			if (myfile.eof()) //If end of file
-            break;
-			arr[arrSize++] = x;
-		}
-    // I should have closed the file here, but as the program was ending I was lazy	
-	}
-	else
-	{
-		cout << "Unable to open file";
-	}
-    myfile.close();
-	
-	int start = arr[0];
-	int end = arr[1];
-	int step = arr[2];
-	
-	cout << start << endl;
-	cout << end << endl;
-	cout << step << endl;
-    
-    List serie(start, end, step);
-    
-    TextFile file;
     
 	/*  
     

@@ -93,6 +93,7 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="Colormod.hpp"/>
     <File Name="BST.cpp"/>
     <File Name="ListNode.cpp"/>
     <File Name="ListNode.hpp"/>
