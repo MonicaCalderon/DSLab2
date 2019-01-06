@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CodeLite_Project Name="Lab2" Version="10.0.0" InternalType="Console">
+<CodeLite_Project Name="PL2Moni" Version="10.0.0" InternalType="Console">
   <Description/>
   <Dependencies/>
   <Settings Type="Executable">
@@ -63,7 +63,7 @@
       <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
         <![CDATA[]]>
       </Environment>
-      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="yes">
         <DebuggerSearchPaths/>
         <PostConnectCommands/>
         <StartupCommands/>
@@ -93,18 +93,21 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
-    <File Name="Colormod.hpp"/>
-    <File Name="BST.cpp"/>
+    <File Name="BSTree.cpp" ExcludeProjConfig=""/>
+    <File Name="BSTree.hpp" ExcludeProjConfig=""/>
+    <File Name="BST.hpp" ExcludeProjConfig=""/>
     <File Name="ListNode.cpp"/>
     <File Name="ListNode.hpp"/>
     <File Name="List.cpp"/>
     <File Name="List.hpp"/>
-    <File Name="Tree.cpp" ExcludeProjConfig="Debug;"/>
-    <File Name="Tree.hpp" ExcludeProjConfig="Debug;"/>
-    <File Name="TreeNode.cpp" ExcludeProjConfig="Debug;"/>
-    <File Name="TreeNode.hpp" ExcludeProjConfig="Debug;"/>
-    <File Name="TextFile.hpp"/>
+    <File Name="colormod.hpp"/>
+    <File Name="BST.cpp" ExcludeProjConfig=""/>
     <File Name="TextFile.cpp"/>
+    <File Name="TextFile.hpp"/>
+    <File Name="Tree.cpp"/>
+    <File Name="Tree.hpp"/>
+    <File Name="TreeNode.cpp"/>
+    <File Name="TreeNode.hpp"/>
     <File Name="main.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>

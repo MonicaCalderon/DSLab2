@@ -1,1 +1,0 @@
-./Debug/main.cpp.o ./Debug/TextFile.cpp.o ./Debug/BST.cpp.o ./Debug/ListNode.cpp.o ./Debug/List.cpp.o   

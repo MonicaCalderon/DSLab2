@@ -1,82 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Session Name="C:\WorkSpacesDS\PL2\DSLab2\PL2.workspace">
-  <int Value="4" Name="m_selectedTab"/>
-  <wxString Value="C:\WorkSpacesDS\PL2\DSLab2\PL2.workspace" Name="m_workspaceName"/>
+<Session Name="C:\WorkSpacesDS\PL2Moni\PL2Moni.workspace">
+  <int Value="13" Name="m_selectedTab"/>
+  <wxString Value="C:\WorkSpacesDS\PL2Moni\PL2Moni.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="C:\WorkSpacesDS\PL2\DSLab2\Lab2\TreeNode.cpp" Name="FileName"/>
+      <wxString Value="C:\WorkSpacesDS\PL2Moni\PL2Moni\main.cpp" Name="FileName"/>
+      <int Value="95" Name="FirstVisibleLine"/>
+      <int Value="105" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\WorkSpacesDS\PL2Moni\PL2Moni\TreeNode.hpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <int Value="22" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\WorkSpacesDS\PL2\DSLab2\Lab2\TreeNode.hpp" Name="FileName"/>
-      <int Value="14" Name="FirstVisibleLine"/>
-      <int Value="15" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\WorkSpacesDS\PL2\DSLab2\Lab2\Tree.hpp" Name="FileName"/>
+      <wxString Value="C:\WorkSpacesDS\PL2Moni\PL2Moni\TreeNode.cpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <int Value="37" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\WorkSpacesDS\PL2\DSLab2\Lab2\Tree.cpp" Name="FileName"/>
-      <int Value="11" Name="FirstVisibleLine"/>
+      <wxString Value="C:\WorkSpacesDS\PL2Moni\PL2Moni\Tree.hpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="22" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\WorkSpacesDS\PL2Moni\PL2Moni\Tree.cpp" Name="FileName"/>
+      <int Value="18" Name="FirstVisibleLine"/>
+      <int Value="20" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\WorkSpacesDS\PL2Moni\PL2Moni\TextFile.hpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="1" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\WorkSpacesDS\PL2Moni\PL2Moni\TextFile.cpp" Name="FileName"/>
+      <int Value="108" Name="FirstVisibleLine"/>
+      <int Value="122" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\WorkSpacesDS\PL2Moni\PL2Moni\BST.cpp" Name="FileName"/>
+      <int Value="116" Name="FirstVisibleLine"/>
+      <int Value="119" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\WorkSpacesDS\PL2Moni\PL2Moni\colormod.hpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="21" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\WorkSpacesDS\PL2Moni\PL2Moni\List.hpp" Name="FileName"/>
+      <int Value="6" Name="FirstVisibleLine"/>
       <int Value="12" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\WorkSpacesDS\PL2\DSLab2\Lab2\main.cpp" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="83" Name="CurrentLine"/>
+      <wxString Value="C:\WorkSpacesDS\PL2Moni\PL2Moni\List.cpp" Name="FileName"/>
+      <int Value="6" Name="FirstVisibleLine"/>
+      <int Value="19" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\WorkSpacesDS\PL2\DSLab2\Lab2\List.cpp" Name="FileName"/>
-      <int Value="2" Name="FirstVisibleLine"/>
-      <int Value="3" Name="CurrentLine"/>
+      <wxString Value="C:\WorkSpacesDS\PL2Moni\PL2Moni\ListNode.hpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="18" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\WorkSpacesDS\PL2\DSLab2\Lab2\List.hpp" Name="FileName"/>
+      <wxString Value="C:\WorkSpacesDS\PL2Moni\PL2Moni\ListNode.cpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <int Value="13" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\WorkSpacesDS\PL2\DSLab2\Lab2\ListNode.cpp" Name="FileName"/>
+      <wxString Value="C:\WorkSpacesDS\PL2Moni\PL2Moni\BST.hpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <int Value="7" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\WorkSpacesDS\PL2\DSLab2\Lab2\ListNode.hpp" Name="FileName"/>
+      <wxString Value="C:\WorkSpacesDS\PL2Moni\PL2Moni\BSTree.hpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <int Value="10" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="C:\WorkSpacesDS\PL2\DSLab2\Lab2\TextFile.cpp" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\WorkSpacesDS\PL2\DSLab2\Lab2\TextFile.hpp" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <wxString Value="C:\WorkSpacesDS\PL2Moni\PL2Moni\BSTree.cpp" Name="FileName"/>
+      <int Value="4" Name="FirstVisibleLine"/>
+      <int Value="127" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
