@@ -1,50 +1,17 @@
-#include<iostream>
+#include "BST.hpp"
 
-#include "BSTree.hpp"
+#include<iostream>
 
 using namespace std;
 
-BSTree::BSTree()
-{
-    
-}
-
-BSTree::~BSTree()
-{
-    
-}
-
-BSTree::BSTree(int start, int end, int step)
-{
-    for (int i=start;i<=end;i = i + step)
+ struct node
     {
-        //insert2(i);
-    }
-}
+        int data;
+        node* left;
+        node* right;
+    };
 
-struct Node
-{
-    int data;
-    Node *right;
-    Node *left;
-};
-
-Node* insert(int x, Node* t)
-{
-        if(t == NULL)
-        {
-            t = new Node;
-            t->data = x;
-            t->left = t->right = NULL;
-        }
-        else if(x < t->data)
-            t->left = insert(x, t->left);
-        else if(x > t->data)
-            t->right = insert(x, t->right);
-        return t;
-}
-
-Node* makeEmpty(Node* t)
+node* makeEmpty(node* t)
     {
         if(t == NULL)
             return NULL;
@@ -56,7 +23,22 @@ Node* makeEmpty(Node* t)
         return NULL;
     }
 
-Node* findMin(Node* t)
+node* insert(int x, node* t)
+    {
+        if(t == NULL)
+        {
+            t = new node;
+            t->data = x;
+            t->left = t->right = NULL;
+        }
+        else if(x < t->data)
+            t->left = insert(x, t->left);
+        else if(x > t->data)
+            t->right = insert(x, t->right);
+        return t;
+    }
+
+node* findMin(node* t)
     {
         if(t == NULL)
             return NULL;
@@ -66,7 +48,7 @@ Node* findMin(Node* t)
             return findMin(t->left);
     }
 
-Node* findMax(Node* t)
+node* findMax(node* t)
     {
         if(t == NULL)
             return NULL;
@@ -76,9 +58,9 @@ Node* findMax(Node* t)
             return findMax(t->right);
     }
 
-Node* remove(int x, Node* t)
+node* remove(int x, node* t)
     {
-        Node* temp;
+        node* temp;
         if(t == NULL)
             return NULL;
         else if(x < t->data)
@@ -104,7 +86,7 @@ Node* remove(int x, Node* t)
         return t;
     }
 
-void inorder(Node* t)
+void inorder(node* t)
     {
         if(t == NULL)
             return;
@@ -113,7 +95,7 @@ void inorder(Node* t)
         inorder(t->right);
     }
 
-Node* find(Node* t, int x)
+node* find(node* t, int x)
     {
         if(t == NULL)
             return NULL;
@@ -124,29 +106,37 @@ Node* find(Node* t, int x)
         else
             return t;
     }
-    
-void insert2(int x)
+
+BST::BST()
     {
-        struct Node* root;
+        root = NULL;
+        
+    }
+
+BST::~BST()
+    {
+        root = makeEmpty(root);
+    }
+        struct node* root;
+void insert(int x)
+    {
+        struct node* root;
         root = insert(x, root);
     }
 
-void remove2(int x)
+void remove(int x)
     {
-        struct Node* root;
+        struct node* root;
         root = remove(x, root);
     }
 
-void display2()
+void display()
     {
-        struct Node* root;
         inorder(root);
         cout << endl;
     }
 
-void search2(int x)
+void search(int x)
     {
-        struct Node* root;
         root = find(root, x);
     }
-

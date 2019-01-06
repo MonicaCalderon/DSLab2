@@ -18,7 +18,7 @@ BSTree::BSTree(int start, int end, int step)
 {
     for (int i=start;i<=end;i = i + step)
     {
-        //insert2(i);
+        insert2(i);
     }
 }
 

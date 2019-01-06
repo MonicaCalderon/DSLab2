@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ PL2Moni - Debug ]----------"
-	@cd "PL2Moni" && "$(MAKE)" -f  "PL2Moni.mk"
+	@echo "----------Building project:[ PL2 - Debug ]----------"
+	@cd "PL2" && "$(MAKE)" -f  "PL2.mk"
 clean:
-	@echo "----------Cleaning project:[ PL2Moni - Debug ]----------"
-	@cd "PL2Moni" && "$(MAKE)" -f  "PL2Moni.mk" clean
+	@echo "----------Cleaning project:[ PL2 - Debug ]----------"
+	@cd "PL2" && "$(MAKE)" -f  "PL2.mk" clean

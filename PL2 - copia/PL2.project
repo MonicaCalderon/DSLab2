@@ -93,21 +93,21 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
-    <File Name="TreeNode.cpp"/>
-    <File Name="TreeNode.hpp"/>
-    <File Name="Tree.cpp"/>
-    <File Name="Tree.hpp"/>
-    <File Name="TextFile.cpp"/>
-    <File Name="TextFile.hpp"/>
+    <File Name="BSTree.cpp" ExcludeProjConfig=""/>
+    <File Name="BSTree.hpp" ExcludeProjConfig=""/>
+    <File Name="BST.hpp" ExcludeProjConfig=""/>
     <File Name="ListNode.cpp"/>
     <File Name="ListNode.hpp"/>
     <File Name="List.cpp"/>
     <File Name="List.hpp"/>
     <File Name="colormod.hpp"/>
-    <File Name="BSTree.cpp"/>
-    <File Name="BSTree.hpp"/>
-    <File Name="BST.cpp" ExcludeProjConfig="Debug;"/>
-    <File Name="BST.hpp" ExcludeProjConfig="Debug;"/>
+    <File Name="BST.cpp" ExcludeProjConfig=""/>
+    <File Name="TextFile.cpp"/>
+    <File Name="TextFile.hpp"/>
+    <File Name="Tree.cpp"/>
+    <File Name="Tree.hpp"/>
+    <File Name="TreeNode.cpp"/>
+    <File Name="TreeNode.hpp"/>
     <File Name="main.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>
