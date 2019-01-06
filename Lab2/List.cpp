@@ -1,7 +1,7 @@
 #include "List.hpp"
 #include "ListNode.hpp"
 #include <iostream> //includes NULL
-#include <curses.h> //includes cout
+#include <conio.h> //includes cout
 #include <stdlib.h>//Includes rand
 
 using namespace std;

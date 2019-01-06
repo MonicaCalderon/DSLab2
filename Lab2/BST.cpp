@@ -1,19 +1,17 @@
+#include "BST.hpp"
+
 #include<iostream>
 
 using namespace std;
 
-class BST
-{
-    struct node
+ struct node
     {
         int data;
         node* left;
         node* right;
     };
 
-    node* root;
-
-    node* makeEmpty(node* t)
+node* makeEmpty(node* t)
     {
         if(t == NULL)
             return NULL;
@@ -25,7 +23,7 @@ class BST
         return NULL;
     }
 
-    node* insert(int x, node* t)
+node* insert(int x, node* t)
     {
         if(t == NULL)
         {
@@ -40,7 +38,7 @@ class BST
         return t;
     }
 
-    node* findMin(node* t)
+node* findMin(node* t)
     {
         if(t == NULL)
             return NULL;
@@ -50,7 +48,7 @@ class BST
             return findMin(t->left);
     }
 
-    node* findMax(node* t)
+node* findMax(node* t)
     {
         if(t == NULL)
             return NULL;
@@ -60,7 +58,7 @@ class BST
             return findMax(t->right);
     }
 
-    node* remove(int x, node* t)
+node* remove(int x, node* t)
     {
         node* temp;
         if(t == NULL)
@@ -88,7 +86,7 @@ class BST
         return t;
     }
 
-    void inorder(node* t)
+void inorder(node* t)
     {
         if(t == NULL)
             return;
@@ -97,7 +95,7 @@ class BST
         inorder(t->right);
     }
 
-    node* find(node* t, int x)
+node* find(node* t, int x)
     {
         if(t == NULL)
             return NULL;
@@ -109,35 +107,36 @@ class BST
             return t;
     }
 
-public:
-    BST()
+BST::BST()
     {
         root = NULL;
+        
     }
 
-    ~BST()
+BST::~BST()
     {
         root = makeEmpty(root);
     }
-
-    void insert(int x)
+        struct node* root;
+void insert(int x)
     {
+        struct node* root;
         root = insert(x, root);
     }
 
-    void remove(int x)
+void remove(int x)
     {
+        struct node* root;
         root = remove(x, root);
     }
 
-    void display()
+void display()
     {
         inorder(root);
         cout << endl;
     }
 
-    void search(int x)
+void search(int x)
     {
         root = find(root, x);
     }
-};

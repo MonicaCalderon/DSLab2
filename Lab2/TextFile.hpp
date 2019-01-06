@@ -1,3 +1,6 @@
+#include "List.hpp"
+#include "BST.hpp"
+
 #include<iostream>
 
 using namespace std;
@@ -11,7 +14,10 @@ public:
     TextFile();
     void write(int start, int end, int step);
     string read();
-    void readSerie();
+    List createList(int n);
+    BST createTree(int n);
+    void showContent();
+    int countLines();
 };
 
 #endif // TEXTFILE_HPP

@@ -1,4 +1,4 @@
-./Debug/List.cpp.o: List.cpp List.hpp ListNode.hpp
+Debug/List.cpp.o: List.cpp List.hpp ListNode.hpp
 
 List.hpp:
 
