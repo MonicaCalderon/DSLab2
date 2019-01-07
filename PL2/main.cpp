@@ -119,7 +119,7 @@ int main() {
         {
             List list;
             list = file.createList(i); 
-            cout<<"Distinct numbers: " << list.distinct(list) <<endl;
+            cout<<"Distinct numbers: " << list.distinct() <<endl;
         }
 		cout << "> End of the task. Redirect to menu.\n";
 		break;

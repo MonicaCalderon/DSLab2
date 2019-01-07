@@ -24,6 +24,7 @@ public:
     int getName();
     void setName(int n);
     float average(ListNode *list);
+	void distinct(ListNode *list);
     int findMin(ListNode *list);
     int findMax(ListNode *list);
 private:

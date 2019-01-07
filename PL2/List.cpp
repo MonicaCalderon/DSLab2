@@ -1,7 +1,7 @@
 #include "List.hpp"
 #include "ListNode.hpp"
 #include <iostream> //includes NULL
-#include <conio.h> //includes cout
+#include <curses.h> //includes cout
 #include <stdlib.h>//Includes rand
 
 using namespace std;
@@ -170,15 +170,15 @@ void List::distinct(ListNode *list)
 	// Creamos una lista auxiliar
 	List listAux;
 	ListNode *actual2 = new ListNode();
-	actual2 = listAux;
+	actual2 = list;
 	
 	// Numero auxiliar
 	int auxNumber;
 
 	while(actual != NULL) //termina de recorrer la lista cuando actual == NULL
 	{
-		auxNumber = actual.getData();
-		if !(listAux.searchInList(auxNumber)) {
+		auxNumber = actual->getData();
+		if (!listAux.searchInList(auxNumber)) {
 			listAux.insert(actual2,auxNumber);
 		}
 		actual = actual->getNext(); // Actual avanza una posición
