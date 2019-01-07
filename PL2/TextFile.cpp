@@ -1,6 +1,6 @@
 #include "TextFile.hpp"
 #include "List.hpp"
-#include "BSTree.hpp"
+#include "BST.cpp"
 
 #include<iostream>
 #include<fstream>
@@ -84,7 +84,7 @@ List TextFile::createList(int n)
             file >> x;
             step = x;
             
-            List* list = new List(start, end, step); 
+            List *list = new List(start, end, step); 
             return *list;
 		}
         else
@@ -96,8 +96,9 @@ List TextFile::createList(int n)
         file.close();
     }
 }
+
 /*
-BSTree TextFile::createTree(int n)
+BST TextFile::createTree(int n)
 {
     int lines = countLines();
     if(n<=lines)
@@ -118,13 +119,13 @@ BSTree TextFile::createTree(int n)
             file >> x;
             step = x;
             
-            BSTree tree = new BSTree(start, end, step); 
+            BST tree = new BST(start, end, step); 
             return tree;
 		}
         else
         {
             cout << "Unable to open file";
-            BSTree tree;
+            BST tree;
             return tree;
         }
         file.close();

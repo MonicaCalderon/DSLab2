@@ -9,6 +9,7 @@
 #include "ListNode.hpp"
 #include "List.hpp"
 #include "BST.cpp"
+#include "BSTree.hpp"
 
 using namespace std;
 
@@ -20,11 +21,7 @@ int main() {
 	
     TextFile file;
     int lines = file.countLines();
-    for(int i = 1; i<=lines; i++)
-    {
-        file.createList(i);
-    }
-    
+    BSTree tree;
     
 	// Para poder imprimir en colores
 	Color::Modifier red(Color::FG_RED);
@@ -103,10 +100,16 @@ int main() {
             //Aquí se genera la lista con todos los números de la serie y se muestra por pantalla
             for(int i = 1; i<=lines; i++)
             {
-                file.createList(i); 
+                List list;
+                list = file.createList(i); 
+                list.setName(i);
+                BSTree tree;
+                tree.createTree(i);
+                tree.setName(i);
             }
             cout<<endl;
             //Aquí los árboles
+            
             
 			cout << "> End of the task. Redirect to menu.\n" << def;		
 		break;
@@ -117,17 +120,48 @@ int main() {
 		break;
 		
 		case 4:
+        cout<<"Average of series: "<<endl;
+        for(int i = 1; i<=lines; i++)
+        {
+            List list;
+            list = file.createList(i); 
+            cout<<"Average: "<<list.average(list.getList())<<endl;
+        }
 		cout << "End of Program.\n";
 		break;
 		
 		case 5:
-		cout << "game start!\n";
-		// rest of code here
+        cout<<"The maximum and minimum numbers of the list are: "<<endl;
+        for(int i = 1; i<=lines; i++)
+        {
+            List list;
+            list = file.createList(i); 
+            cout<<"Maximum: "<<list.findMax(list.getList())<<endl;
+            cout<<"Minimum: "<<list.findMin(list.getList())<<endl;
+        }
+        
+		cout << "End of Program. \n";
+
 		break;
 		
 		case 6:
-		cout << "game start!\n";
-		// rest of code here
+        int num;
+		cout << "Introduce the number you want to find: \n";
+        cin>>num;
+        
+         for(int i = 1; i<=lines; i++)
+        {
+            List list;
+            list = file.createList(i); 
+
+            cout<<"Is "<<num<<" in the list " <<i<<"? "<<endl;
+            if(list.searchInList(num))
+                cout<<"Yes"<<endl;
+            else
+                cout<<"No"<<endl;
+        }
+        cout << "End of Program. \n";
+        
 		break;
 		
 		case 7:

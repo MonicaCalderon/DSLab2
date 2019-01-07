@@ -1,5 +1,4 @@
 #include "List.hpp"
-#include "BST.hpp"
 
 #include<iostream>
 
@@ -15,7 +14,7 @@ public:
     void write(int start, int end, int step);
     string read();
     List createList(int n);
-    BST createTree(int n);
+    void createTree(int n);
     void showContent();
     int countLines();
 };

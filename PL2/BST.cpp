@@ -1,17 +1,22 @@
-#include "BST.hpp"
+#include "TextFile.hpp"
 
+#include<fstream>
 #include<iostream>
 
 using namespace std;
 
- struct node
+class BST
+{
+    struct node
     {
         int data;
         node* left;
         node* right;
     };
 
-node* makeEmpty(node* t)
+    node* root;
+
+    node* makeEmpty(node* t)
     {
         if(t == NULL)
             return NULL;
@@ -23,7 +28,7 @@ node* makeEmpty(node* t)
         return NULL;
     }
 
-node* insert(int x, node* t)
+    node* insert(int x, node* t)
     {
         if(t == NULL)
         {
@@ -37,8 +42,7 @@ node* insert(int x, node* t)
             t->right = insert(x, t->right);
         return t;
     }
-
-node* findMin(node* t)
+    node* findMin(node* t)
     {
         if(t == NULL)
             return NULL;
@@ -48,7 +52,7 @@ node* findMin(node* t)
             return findMin(t->left);
     }
 
-node* findMax(node* t)
+    node* findMax(node* t)
     {
         if(t == NULL)
             return NULL;
@@ -58,7 +62,7 @@ node* findMax(node* t)
             return findMax(t->right);
     }
 
-node* remove(int x, node* t)
+    node* remove(int x, node* t)
     {
         node* temp;
         if(t == NULL)
@@ -86,7 +90,7 @@ node* remove(int x, node* t)
         return t;
     }
 
-void inorder(node* t)
+    void inorder(node* t)
     {
         if(t == NULL)
             return;
@@ -95,7 +99,7 @@ void inorder(node* t)
         inorder(t->right);
     }
 
-node* find(node* t, int x)
+    node* find(node* t, int x)
     {
         if(t == NULL)
             return NULL;
@@ -107,36 +111,72 @@ node* find(node* t, int x)
             return t;
     }
 
-BST::BST()
+public:
+    BST()
     {
         root = NULL;
-        
     }
 
-BST::~BST()
+    ~BST()
     {
         root = makeEmpty(root);
     }
-        struct node* root;
-void insert(int x)
+
+    void insert(int x)
     {
-        struct node* root;
         root = insert(x, root);
     }
 
-void remove(int x)
+void createTree(int n)
+{
+    TextFile file;
+    int lines = file.countLines();
+     int start, end, step;
+    if(n<=lines)
     {
-        struct node* root;
+        ifstream file("input.txt");
+        if (file.is_open())
+        {
+            int x;
+            for(int i = 1; i<=3*(n-1); i++ )
+            {
+                file>>x;
+            }
+            file >> x;
+            start = x;
+            file >> x;
+            end = x;
+            file >> x;
+            step = x;
+            
+            for (int i=start;i<=end;i = i + step)
+            {
+                insert(i);
+            }
+		}
+        else
+        {
+            cout << "Unable to open file";
+        }
+        file.close();
+    }
+    display();
+}
+
+
+    void remove(int x)
+    {
         root = remove(x, root);
     }
 
-void display()
+    void display()
     {
         inorder(root);
         cout << endl;
     }
 
-void search(int x)
+    void search(int x)
     {
         root = find(root, x);
     }
+};

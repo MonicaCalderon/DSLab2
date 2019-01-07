@@ -16,6 +16,7 @@ List::List(int start, int end, int step)
     for (int i=start;i<=end;i = i + step)
     {
         insert(list,i);
+        nElem++;
     }
     showList(list);
 }
@@ -138,3 +139,52 @@ int List::getStep () {
 void List::setStep(int ste){
         step= ste;
     }
+    
+int List::getName () {
+	return this->name;
+}
+
+void List::setName(int n){
+        name= n;
+    }
+    
+float List::average(ListNode *list)
+{
+    float average;
+    float sum = 0;
+    for(int i=0; i<nElem;i++) //Recorre la lista
+    {
+        sum = sum + list->data;
+        list = list->next;
+    }
+    average = sum/nElem;
+    return average;
+}
+
+int List::findMin(ListNode *list)
+{
+    int min = list->data;
+    while(list !=NULL) //Recorre la lista
+    {
+         if(list->data < min)
+        {
+            min = list->data;
+        }
+        list = list->next;
+    }    
+    return min;
+}
+
+int List::findMax(ListNode *list)
+{
+    int max = 0;
+    while(list !=NULL) //Recorre la lista
+    {
+        if(list->data > max)
+        {
+            max = list->data;
+        }
+        list = list->next;
+    }
+    return max;
+}

@@ -6,13 +6,21 @@ class BSTree
 public:
     BSTree();
     ~BSTree();
-    BSTree(int start, int end, int step);
-    struct Node* insert(int x, Node* t);
-    void insert2(int x);
+    void insert(int x);
+    struct node* insert(int x, node* t);
+    struct node* makeEmpty(node* t);
+    struct node* findMin(node* t);
+    struct node* findMax(node* t);
+    node* find(node* t, int x);
+    void inorder(node* t);
+    void display();
+    void search(int x);
+    void createTree(int n);
+    int getName();
+    void setName(int n);
 private:
-    struct Node* root;
-    struct Node;
-    struct Node *tree;
+    node *tree = NULL;
+    int name;
 };
 
 #endif // BSTREE_HPP

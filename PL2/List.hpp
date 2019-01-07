@@ -21,12 +21,19 @@ public:
     void setStart(int sta);
     void setEnd(int e);
     void setStep(int ste);
+    int getName();
+    void setName(int n);
+    float average(ListNode *list);
+    int findMin(ListNode *list);
+    int findMax(ListNode *list);
 private:
     ListNode node;
     ListNode *list = NULL;
     int start;
     int end;
     int step;
+    int name;
+    int nElem = 0;
 };
 
 #endif // LIST_HPP
