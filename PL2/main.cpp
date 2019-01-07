@@ -115,8 +115,13 @@ int main() {
 		break;
 		
 		case 3:
-		cout << "Ahahah, you really think I will help you?\n";
-		// rest of code here
+		for(int i = 1; i<=lines; i++)
+        {
+            List list;
+            list = file.createList(i); 
+            cout<<"Distinct numbers: " << list.distinct(list) <<endl;
+        }
+		cout << "> End of the task. Redirect to menu.\n";
 		break;
 		
 		case 4:
@@ -127,20 +132,25 @@ int main() {
             list = file.createList(i); 
             cout<<"Average: "<<list.average(list.getList())<<endl;
         }
-		cout << "End of Program.\n";
+		cout << "> End of the task. Redirect to menu.\n";
 		break;
 		
 		case 5:
-        cout<<"The maximum and minimum numbers of the list are: "<<endl;
+        cout<<"The maximum and minimum numbers of the list are: \n"<<endl;
         for(int i = 1; i<=lines; i++)
         {
             List list;
-            list = file.createList(i); 
+            list = file.createList(i);
+			BSTree tree;
+			tree.createTree(i);
             cout<<"Maximum: "<<list.findMax(list.getList())<<endl;
             cout<<"Minimum: "<<list.findMin(list.getList())<<endl;
+			cout << "Maxium: "<<tree.findMax(tree)<<endl;
+			cout << "Minimum: "<<tree.findMin(tree)<<endl;
         }
         
-		cout << "End of Program. \n";
+		cout << "\n";
+		cout << "> End of the task. Redirect to menu.\n";
 
 		break;
 		
@@ -160,17 +170,17 @@ int main() {
             else
                 cout<<"No"<<endl;
         }
-        cout << "End of Program. \n";
+        cout << "> End of the task. Redirect to menu.\n";
         
 		break;
 		
 		case 7:
-		cout << "game start!\n";
+		cout << "> End of the task. Redirect to menu.\n";
 		// rest of code here
 		break;
 		
 		case 8:
-		cout << "game start!\n";
+		cout << "> End of the task. Redirect to menu.\n";
 		// rest of code here
 		break;
 		

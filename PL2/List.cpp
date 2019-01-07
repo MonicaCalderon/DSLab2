@@ -161,6 +161,37 @@ float List::average(ListNode *list)
     return average;
 }
 
+void List::distinct(ListNode *list)
+{
+	// Creamos un node que apunte a la primera posición de la lista
+	ListNode *actual = new ListNode();
+	actual = list;
+	
+	// Creamos una lista auxiliar
+	List listAux;
+	ListNode *actual2 = new ListNode();
+	actual2 = listAux;
+	
+	// Numero auxiliar
+	int auxNumber;
+
+	while(actual != NULL) //termina de recorrer la lista cuando actual == NULL
+	{
+		auxNumber = actual.getData();
+		if !(listAux.searchInList(auxNumber)) {
+			listAux.insert(actual2,auxNumber);
+		}
+		actual = actual->getNext(); // Actual avanza una posición
+		actual2 = actual2->getNext(); // Actual2 avanza otra posición más
+	}
+	
+	while(actual2 != NULL) { // Recorremos la lista auxiliar para mostrarla
+        cout<<actual2->getData()<<" -> ";//Mostrar la info que hay en el nodo donde apunta actual
+        actual2 = actual2->getNext(); //actual avanza una pos
+	}
+	cout<<endl;
+}
+
 int List::findMin(ListNode *list)
 {
     int min = list->data;
