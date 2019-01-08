@@ -60,11 +60,6 @@ int main() {
 	}
     myfile.close();
 	
-/*
-	int start = arr[0];
-	int end = arr[1];
-	int step = arr[2];
-*/
 	int choice;
 	bool showMenu = true;
 	while (showMenu != false){
@@ -119,7 +114,8 @@ int main() {
         {
             List list;
             list = file.createList(i); 
-            cout<<"Distinct numbers: " << list.distinct() <<endl;
+            // Hay que poner el node dentro de los parentesis de distinct 
+			cout<<"Distinct numbers: " << list.distinct() <<endl;
         }
 		cout << "> End of the task. Redirect to menu.\n";
 		break;
@@ -197,20 +193,6 @@ int main() {
 	}
 
 	}
-
-	
-    
-	/*  
-    
-    TextFile file;
-    file.write();
-    string str;
-    str = file.read();
-    file.createSerie(str);
-    
-    Tree newTree;*/
-
-    
     
 	return 0;
 }

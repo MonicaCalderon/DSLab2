@@ -1,33 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Session Name="/Users/mario/Desktop/code/DSLab2/PL2.workspace">
-  <int Value="3" Name="m_selectedTab"/>
-  <wxString Value="/Users/mario/Desktop/code/DSLab2/PL2.workspace" Name="m_workspaceName"/>
+<Session Name="C:\Users\mario\Documents\GitHub\DSLab2\PL2.workspace">
+  <int Value="0" Name="m_selectedTab"/>
+  <wxString Value="C:\Users\mario\Documents\GitHub\DSLab2\PL2.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="/Users/mario/Desktop/code/DSLab2/PL2/main.cpp" Name="FileName"/>
-      <int Value="107" Name="FirstVisibleLine"/>
-      <int Value="107" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="/Users/mario/Desktop/code/DSLab2/PL2/List.cpp" Name="FileName"/>
-      <int Value="162" Name="FirstVisibleLine"/>
-      <int Value="180" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="/Users/mario/Desktop/code/DSLab2/PL2/List.hpp" Name="FileName"/>
-      <int Value="3" Name="FirstVisibleLine"/>
-      <int Value="3" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="/Users/mario/Desktop/code/DSLab2/PL2/TextFile.cpp" Name="FileName"/>
-      <int Value="2" Name="FirstVisibleLine"/>
-      <int Value="16" Name="CurrentLine"/>
+      <wxString Value="C:\Users\mario\Documents\GitHub\DSLab2\PL2\main.cpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="178" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
