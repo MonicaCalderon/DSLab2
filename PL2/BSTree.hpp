@@ -1,3 +1,5 @@
+#include <iostream>
+
 #ifndef BSTREE_HPP
 #define BSTREE_HPP
 

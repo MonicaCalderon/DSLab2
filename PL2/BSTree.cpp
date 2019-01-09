@@ -146,7 +146,7 @@ void BSTree::createTree(int n)
         }
         file.close();
     }
-    display();
+    //display();
 }
 
 int BSTree::getName () {

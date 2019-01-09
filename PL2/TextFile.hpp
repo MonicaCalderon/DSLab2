@@ -1,4 +1,5 @@
 #include "List.hpp"
+#include "ListNode.hpp"
 
 #include<iostream>
 
@@ -11,12 +12,16 @@ class TextFile
 {
 public:
     TextFile();
-    void write(int start, int end, int step);
+    void write();
     string read();
-    List createList(int n);
+    List createList();
+    List createList2(int n);
     void createTree(int n);
     void showContent();
     int countLines();
+private:
+    List *list;
+    ListNode *listN;
 };
 
 #endif // TEXTFILE_HPP

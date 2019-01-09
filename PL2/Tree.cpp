@@ -101,3 +101,12 @@ void preOrder(struct Node *tree)
         preOrder(tree->right);
     }
 }
+
+Tree::Tree()
+{
+}
+
+
+Tree::~Tree()
+{
+}

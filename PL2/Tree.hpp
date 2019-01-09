@@ -17,6 +17,13 @@ private:
     struct Node;
 };
 
+class Tree
+{
+public:
+	Tree();
+	~Tree();
+};
+
 
 
 #endif // TREE_HPP

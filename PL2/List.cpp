@@ -1,7 +1,11 @@
 #include "List.hpp"
 #include "ListNode.hpp"
+#include "BSTree.hpp"
+#include "TextFile.hpp"
+
 #include <iostream> //includes NULL
-#include <curses.h> //includes cout
+#include<fstream>
+#include <conio.h> //includes cout
 #include <stdlib.h>//Includes rand
 
 using namespace std;
@@ -18,7 +22,52 @@ List::List(int start, int end, int step)
         insert(list,i);
         nElem++;
     }
-    showList(list);
+    //showList();
+}
+
+void List::createList(int t)
+{
+    TextFile txt;
+    int lines = txt.countLines();
+    int x, start, end, step;
+    ifstream file("input.txt");
+    if (file.is_open())
+    {
+        for(int j = 1; j<=lines; j++ )
+        {
+            file >> x;
+            start = x;
+            file >> x;
+            end = x;
+            file >> x;
+            step = x;
+        
+            for (int i=start;i<=end;i = i + step)
+            {   
+                if(t == 0)
+                {
+                    if(!searchInList(i))
+                    {
+                        insert(list,i);
+                        nDistint++;
+                    }
+                    else
+                    nRep++;
+                }
+                else
+                    insert(list,i);
+                    nElem++;
+
+            }
+		}
+    }
+    else
+    {
+        cout << "Unable to open file";
+    }
+    file.close();
+    if(t==0)
+        cout<<nRep<<" numbers are duplicated."<<endl<<"They has been deleted from the list. "<<endl;
 }
 
 ListNode* List::getList(){
@@ -51,12 +100,10 @@ void List::insert(ListNode *&list, int n)
     newNode->next = aux1;
 }
 
-void List::showList(ListNode *list)
+void List::showList()
 {
-    ListNode *actual = new ListNode();
+    ListNode *actual;
     actual = list; //actual señala la primera posición de la lista
-    
-    
     while(actual != NULL)//termina de recorrer la lista cuando actual == NULL
     {
         cout<<actual->getData()<<" -> ";//Mostrar la info que hay en el nodo donde apunta actual
@@ -116,6 +163,14 @@ void List::remove(int r)
     }
 }
 
+int List::getNDistint() {
+	return this->nDistint;
+}
+
+void List::setNDistint(int nd){
+        nDistint= nd;
+}
+
 int List::getStart() {
 	return this->start;
 }
@@ -161,7 +216,7 @@ float List::average(ListNode *list)
     return average;
 }
 
-void List::distinct(ListNode *list)
+void List::distinct()
 {
 	// Creamos un node que apunte a la primera posición de la lista
 	ListNode *actual = new ListNode();
@@ -191,7 +246,6 @@ void List::distinct(ListNode *list)
 	}
 	cout<<endl;
 }
-
 int List::findMin(ListNode *list)
 {
     int min = list->data;

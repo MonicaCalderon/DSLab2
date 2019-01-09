@@ -11,14 +11,28 @@ TextFile::TextFile()
 {
 }
 
-void TextFile::write(int start, int end, int step) //Escribe en el archivo
+void TextFile::write() //Escribe en el archivo
 {
-    read();
-    string str[0] = read(); //Guardamos la primera linea escrita (habría que hacerlo para x lineas)
+    int start, end, step;
+    string line, str;
+    ifstream fileIn;
+    fileIn.open("input.txt");
+    cout<<"What is the first number of the new serie? "<<endl;
+    cin>> start;
+    cout<<"What is the last number of the new serie? "<<endl;
+    cin>> end;
+    cout<<"And the step of the serie? "<<endl;
+    cin>> step;
+    int lines = countLines();
+    while(getline(fileIn, line))
+        str += line + "\n";
+    fileIn.close();
     ofstream fileOut;//Crea un archivo en el q se va a escribir (se borra lo q ya había)
     fileOut.open("input.txt");
-    //Escribimos la linea que teníamos guardadas y la nueva
-    fileOut << str[0] << endl << start << " " << end << " " << step << " " << endl; //Añadimos un espacio al final para que detecte el final del archivo
+    //Escribimos lo que teníamos guardado y la nueva
+    fileOut << str;
+
+    fileOut << start << " " << end << " " << step << " " << endl; //Añadimos un espacio al final para que detecte el final del archivo
     fileOut.close();
 }
 
@@ -63,7 +77,7 @@ int TextFile::countLines()
     return lines;
 }
 
-List TextFile::createList(int n)
+List TextFile::createList2(int n)
 {
     int lines = countLines();
     if(n<=lines)
@@ -95,6 +109,39 @@ List TextFile::createList(int n)
         }
         file.close();
     }
+}
+
+List TextFile::createList() //Crea la lista con todos los números generados por las series que hay en el TextFile
+{
+    int lines = countLines();
+    int start, end, step;
+    ifstream file("input.txt");
+    if (file.is_open())
+    {
+        for(int j = 1; j<=lines; j++ )
+        {
+            int x;
+            file>>x;
+            file >> x;
+            start = x;
+            file >> x;
+            end = x;
+            file >> x;
+            step = x;
+        
+            for (int i=start;i<=end;i = i + step)
+            {   
+                list->insert(listN,i);
+                //nElem++;
+            }
+		}
+    }
+    else
+    {
+        cout << "Unable to open file";
+    }
+    file.close();
+    return *list;
 }
 
 /*

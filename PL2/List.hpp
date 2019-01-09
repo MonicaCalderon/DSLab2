@@ -10,11 +10,14 @@ class List
 public:
     List();
     List(int start, int step, int end);
+    void createList(int t);
     void insert(ListNode *&list, int n);
-    void showList(ListNode *list);
+    void showList();
     bool searchInList(int e);
     void remove(int r);
     ListNode* getList();
+    int getNDistint();
+    void setNDistint(int nd);
     int getStart();
     int getEnd();
     int getStep();
@@ -24,7 +27,7 @@ public:
     int getName();
     void setName(int n);
     float average(ListNode *list);
-	void distinct(ListNode *list);
+	void distinct();
     int findMin(ListNode *list);
     int findMax(ListNode *list);
 private:
@@ -34,6 +37,8 @@ private:
     int end;
     int step;
     int name;
+    int nRep = 0;
+    int nDistint = 0;
     int nElem = 0;
 };
 
