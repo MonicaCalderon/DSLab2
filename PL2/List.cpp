@@ -27,6 +27,7 @@ List::List(int start, int end, int step)
 
 void List::createList(int t)
 {
+    nRep = 0;
     TextFile txt;
     int lines = txt.countLines();
     int x, start, end, step;
@@ -55,8 +56,10 @@ void List::createList(int t)
                     nRep++;
                 }
                 else
+                {
                     insert(list,i);
                     nElem++;
+                }
 
             }
 		}
@@ -272,4 +275,32 @@ int List::findMax(ListNode *list)
         list = list->next;
     }
     return max;
+}
+
+void List::makenull(int t) //Así diferenciamos si la lista que queremos borrar es la que contiene los elementos repetidos o no
+{
+    int n = findMax(list);
+    if(t ==0)
+    {
+        for(int i=0; i<=n; i++)
+        {
+            remove(i);
+        }
+        cout<<"Now, list without ocurrences is: ";
+        showList();
+        cout<<"(empty)"<<endl;
+    }
+    else
+    {
+        for(int i=0; i<=n; i++)
+        {
+            while(searchInList(i))
+                remove(i);
+        }
+        cout<<"Now, list with ocurrences is: ";
+        showList();
+        cout<<"(empty)"<<endl;
+    }
+    nDistint = 0;
+    nRep = 0;
 }

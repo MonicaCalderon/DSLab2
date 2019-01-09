@@ -1,5 +1,5 @@
-#include<fstream>
-#include<iostream>
+#include <fstream>
+#include <iostream>
 
 #include "BSTree.hpp"
 #include "TextFile.hpp"
@@ -8,35 +8,74 @@ using namespace std;
 
 BSTree::BSTree()
 {
-    //Search, find y makeEmpty no funcionan bien
+    for(int i = 1; i < 27; i++) {
+        insert(i);
+        nElem++;
+        nDistint++;
+    }
+    display();
+    // Search, find y makeEmpty no funcionan bien
 }
 
 BSTree::~BSTree()
 {
-
 }
 
-struct node
-{
+struct node {
     int data;
     node* left;
     node* right;
 };
+
+void BSTree::createTree(int t)
+{
+    nRep = 0;
+    TextFile txt;
+    int lines = txt.countLines();
+    int x, start, end, step;
+    ifstream file("input.txt");
+    if(file.is_open()) {
+        for(int j = 1; j <= lines; j++) {
+            file >> x;
+            start = x;
+            file >> x;
+            end = x;
+            file >> x;
+            step = x;
+
+            for(int i = start; i <= end; i = i + step) {
+                if(t == 0) {
+                    if(!searchInTree(i)) {
+                        insert(i, tree);
+                        nDistint++;
+                    } else
+                        nRep++;
+                } else {
+                    insert(i, tree);
+                    nElem++;
+                }
+            }
+        }
+    } else {
+        cout << "Unable to open file";
+    }
+    file.close();
+    if(t == 0)
+        cout << nRep << " numbers are duplicated." << endl << "They has been deleted from the list. " << endl;
+}
 
 void BSTree::insert(int x)
 {
     tree = insert(x, tree);
 }
 
-node* BSTree::insert(int x, node *t)
+node* BSTree::insert(int x, node* t)
 {
-    if(t == NULL)
-    {
+    if(t == NULL) {
         t = new node;
         t->data = x;
         t->left = t->right = NULL;
-    }
-    else if(x < t->data)
+    } else if(x < t->data)
         t->left = insert(x, t->left);
     else if(x > t->data)
         t->right = insert(x, t->right);
@@ -46,39 +85,58 @@ node* BSTree::insert(int x, node *t)
 node* BSTree::makeEmpty(node* t)
 {
     if(t == NULL)
-    return NULL;
+        return NULL;
     {
         makeEmpty(t->left);
         makeEmpty(t->right);
         delete t;
-   }
+    }
     return NULL;
 }
 
-node* BSTree::findMin(node* t)
+int BSTree::findMin()
 {
-    if(t == NULL)
+    if(tree == NULL)
         return NULL;
-    else if(t->left == NULL)
-        {
-        cout<<t->data<<endl;
-        return t;
-        }
-    else
-        return findMin(t->left);
+    node* aux = tree;
+    int min = aux->data;
+    while(aux->left !=NULL)
+    {
+        aux = aux->left;
+        min = aux->data;
+    }
+    return min;
+    
 }
 
-node* BSTree::findMax(node* t)
+int BSTree::findMax()
 {
-    if(t == NULL)
+    if(tree == NULL)
         return NULL;
-    else if(t->right == NULL)
+    node* aux = tree;
+    int max = aux->data;
+    while(aux->right !=NULL)
     {
-        cout<<t->data<<endl;
-        return t;
+        aux = aux->right;
+        max = aux->data;
     }
-    else
-        return findMax(t->right);
+    return max;
+}
+
+float BSTree::average()
+{
+    float av;
+    if(tree == NULL)
+        return 0;
+    node* aux = tree;
+    float sum = aux->data;
+    while(aux->right !=NULL)
+    {
+        aux = aux->right;
+        sum = sum + aux->data;
+    }
+    av = sum/nElem;
+    return av;
 }
 
 void BSTree::inorder(node* t)
@@ -102,57 +160,40 @@ node* BSTree::find(node* t, int x)
         return t;
 }
 
+void BSTree::showTree()
+{
+}
+
 void BSTree::display()
 {
     inorder(tree);
     cout << endl;
 }
 
-void BSTree::search(int x)
+bool BSTree::searchInTree(int x)
 {
-    tree = find(tree, x);
+    node* actual = tree;
+    while(actual != NULL) {
+        if(x == actual->data)
+            return true;
+        else if(x < actual->data)
+            actual = actual->left;
+        else if(x > actual->data)
+            actual = actual->right;
+    }
+    return false;
 }
 
-void BSTree::createTree(int n)
+int BSTree::getName()
 {
-    TextFile file;
-    int lines = file.countLines();
-     int start, end, step;
-    if(n<=lines)
-    {
-        ifstream file("input.txt");
-        if (file.is_open())
-        {
-            int x;
-            for(int i = 1; i<=3*(n-1); i++ )
-            {
-                file>>x;
-            }
-            file >> x;
-            start = x;
-            file >> x;
-            end = x;
-            file >> x;
-            step = x;
-            
-            for (int i=start;i<=end;i = i + step)
-            {
-                insert(i);
-            }
-		}
-        else
-        {
-            cout << "Unable to open file";
-        }
-        file.close();
-    }
-    //display();
+    return this->name;
 }
 
-int BSTree::getName () {
-	return this->name;
+void BSTree::setName(int n)
+{
+    name = n;
 }
 
-void BSTree::setName(int n){
-        name= n;
-    }
+int BSTree::getNDistint() {
+	return this->nDistint;
+}

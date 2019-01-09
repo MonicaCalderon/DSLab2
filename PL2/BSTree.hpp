@@ -11,8 +11,9 @@ public:
     void insert(int x);
     struct node* insert(int x, node* t);
     struct node* makeEmpty(node* t);
-    struct node* findMin(node* t);
-    struct node* findMax(node* t);
+    int findMin();
+    int findMax();
+    float average();
     node* find(node* t, int x);
     void inorder(node* t);
     void display();
@@ -20,9 +21,16 @@ public:
     void createTree(int n);
     int getName();
     void setName(int n);
+    void showTree();
+    bool searchInTree(int x);
+    bool empty(BSTree t);
+    int getNDistint();
 private:
     node *tree = NULL;
     int name;
+    int nDistint = 0;  
+    int nRep = 0;
+    int nElem = 0;
 };
 
 #endif // BSTREE_HPP

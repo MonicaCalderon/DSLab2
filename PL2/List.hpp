@@ -30,6 +30,7 @@ public:
 	void distinct();
     int findMin(ListNode *list);
     int findMax(ListNode *list);
+    void makenull(int t);
 private:
     ListNode node;
     ListNode *list = NULL;
