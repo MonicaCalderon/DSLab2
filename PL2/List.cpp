@@ -15,19 +15,11 @@ List::List()
 
 }
 
-List::List(int start, int end, int step)
-{
-    for (int i=start;i<=end;i = i + step)
-    {
-        insert(list,i);
-        nElem++;
-    }
-    //showList();
-}
-
 void List::createList(int t)
 {
     nRep = 0;
+    nDistint = 0;
+    nElem = 0;
     TextFile txt;
     int lines = txt.countLines();
     int x, start, end, step;

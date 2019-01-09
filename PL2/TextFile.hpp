@@ -13,15 +13,8 @@ class TextFile
 public:
     TextFile();
     void write();
-    string read();
-    List createList();
-    List createList2(int n);
-    void createTree(int n);
     void showContent();
     int countLines();
-private:
-    List *list;
-    ListNode *listN;
 };
 
 #endif // TEXTFILE_HPP

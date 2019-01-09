@@ -38,9 +38,9 @@ private:
     int end;
     int step;
     int name;
-    int nRep = 0;
-    int nDistint = 0;
-    int nElem = 0;
+    int nRep;
+    int nDistint;
+    int nElem;
 };
 
 #endif // LIST_HPP

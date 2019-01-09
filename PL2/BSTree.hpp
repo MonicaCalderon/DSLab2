@@ -7,30 +7,23 @@ class BSTree
 {
 public:
     BSTree();
-    ~BSTree();
     void insert(int x);
     struct node* insert(int x, node* t);
-    struct node* makeEmpty(node* t);
+    struct node* makeEmpty();
     int findMin();
     int findMax();
     float average();
-    node* find(node* t, int x);
     void inorder(node* t);
     void display();
     void search(int x);
-    void createTree(int n);
-    int getName();
-    void setName(int n);
-    void showTree();
+    void createTree();
     bool searchInTree(int x);
-    bool empty(BSTree t);
     int getNDistint();
 private:
     node *tree = NULL;
-    int name;
-    int nDistint = 0;  
-    int nRep = 0;
-    int nElem = 0;
+    int nDistint;  
+    int nRep;
+    int nElem;
 };
 
 #endif // BSTREE_HPP

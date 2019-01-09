@@ -8,17 +8,7 @@ using namespace std;
 
 BSTree::BSTree()
 {
-    for(int i = 1; i < 27; i++) {
-        insert(i);
-        nElem++;
-        nDistint++;
-    }
-    display();
-    // Search, find y makeEmpty no funcionan bien
-}
 
-BSTree::~BSTree()
-{
 }
 
 struct node {
@@ -27,9 +17,11 @@ struct node {
     node* right;
 };
 
-void BSTree::createTree(int t)
+void BSTree::createTree() //Creates the tree with the series of the txt
 {
     nRep = 0;
+    nDistint = 0;
+    nElem = 0;
     TextFile txt;
     int lines = txt.countLines();
     int x, start, end, step;
@@ -43,33 +35,28 @@ void BSTree::createTree(int t)
             file >> x;
             step = x;
 
-            for(int i = start; i <= end; i = i + step) {
-                if(t == 0) {
-                    if(!searchInTree(i)) {
-                        insert(i, tree);
-                        nDistint++;
-                    } else
-                        nRep++;
-                } else {
-                    insert(i, tree);
-                    nElem++;
-                }
+            for(int i = start; i <= end; i = i + step) 
+            {
+                if(searchInTree(i))
+                    nRep++;
+                insert(i);
+                nElem++;
+                nDistint= nElem - nRep;
             }
         }
     } else {
         cout << "Unable to open file";
     }
     file.close();
-    if(t == 0)
-        cout << nRep << " numbers are duplicated." << endl << "They has been deleted from the list. " << endl;
+    cout << nRep << " numbers are duplicated." << endl << "The tree remove it themself. " << endl;
 }
 
-void BSTree::insert(int x)
+void BSTree::insert(int x) //inserts elements in the implicit tree
 {
     tree = insert(x, tree);
 }
 
-node* BSTree::insert(int x, node* t)
+node* BSTree::insert(int x, node* t) //inserts elements in a explicit tree
 {
     if(t == NULL) {
         t = new node;
@@ -82,22 +69,32 @@ node* BSTree::insert(int x, node* t)
     return t;
 }
 
-node* BSTree::makeEmpty(node* t)
+node* BSTree::makeEmpty()
 {
-    if(t == NULL)
-        return NULL;
+    if(tree != NULL)
     {
-        makeEmpty(t->left);
-        makeEmpty(t->right);
-        delete t;
+        while(tree->right !=NULL)
+        {
+            delete tree;
+            tree = tree->right;
+        }
+         while(tree->left !=NULL)
+        {
+            delete tree;
+            tree = tree->left;
+        }
     }
-    return NULL;
+    tree = NULL;
+    cout<<"This is the new tree: ";
+    display();
+    cout<<"(empty)"<<endl;
+    return tree;
 }
 
 int BSTree::findMin()
 {
     if(tree == NULL)
-        return NULL;
+        return 0;
     node* aux = tree;
     int min = aux->data;
     while(aux->left !=NULL)
@@ -112,7 +109,7 @@ int BSTree::findMin()
 int BSTree::findMax()
 {
     if(tree == NULL)
-        return NULL;
+        return 0;
     node* aux = tree;
     int max = aux->data;
     while(aux->right !=NULL)
@@ -135,11 +132,11 @@ float BSTree::average()
         aux = aux->right;
         sum = sum + aux->data;
     }
-    av = sum/nElem;
+    av = sum/nDistint;
     return av;
 }
 
-void BSTree::inorder(node* t)
+void BSTree::inorder(node* t) //Used in function display
 {
     if(t == NULL)
         return;
@@ -148,29 +145,13 @@ void BSTree::inorder(node* t)
     inorder(t->right);
 }
 
-node* BSTree::find(node* t, int x)
-{
-    if(t == NULL)
-        return NULL;
-    else if(x < t->data)
-        return find(t->left, x);
-    else if(x > t->data)
-        return find(t->right, x);
-    else
-        return t;
-}
-
-void BSTree::showTree()
-{
-}
-
-void BSTree::display()
+void BSTree::display() //Show the tree
 {
     inorder(tree);
     cout << endl;
 }
 
-bool BSTree::searchInTree(int x)
+bool BSTree::searchInTree(int x) //Search a element in the tree
 {
     node* actual = tree;
     while(actual != NULL) {
@@ -182,16 +163,6 @@ bool BSTree::searchInTree(int x)
             actual = actual->right;
     }
     return false;
-}
-
-int BSTree::getName()
-{
-    return this->name;
-}
-
-void BSTree::setName(int n)
-{
-    name = n;
 }
 
 int BSTree::getNDistint() {
